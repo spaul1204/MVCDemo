@@ -1,0 +1,29 @@
+﻿@model IEnumerable< MvcDemo1.Models.Department>
+@using MvcDemo1.Models;
+
+@{
+    ViewBag.Title = "Departments List";
+}
+<style>
+    body 
+    {
+        height:700px;
+        width:1500px;
+        background-image:url("Images/iStock-627164018.jpg");
+        background-position:inherit;
+    }
+
+</style>
+<div style="font-family:Algerian">
+<h1>Departments List</h1>
+    </div>
+<div style="font-family:Forte;font-size:larger;font-style:normal;color:black">
+    <ul>
+        @foreach (Department dept in Model)
+        {
+            <li>
+                @Html.ActionLink(dept.Name, "Index", "Employee", new {departmentid = dept.ID },null)
+            </li> 
+        }
+    </ul>
+</div>

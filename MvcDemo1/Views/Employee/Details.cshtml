@@ -1,0 +1,55 @@
+﻿@model MvcDemo1.Models.Employee
+
+
+@{
+    ViewBag.Title = "Employee Details";
+}
+<body>
+<style>
+    body
+    {
+        background-color:flavor;
+    }
+</style>
+
+<div style="font-family:Algerian">
+<h2>Employee Details</h2>
+    <table id="t1" border="1" style="border:2px solid black; width:300px;height:300px;">
+        <tr>
+            <td colspan="5" style="font-family:Britannic;font-size:x-large;padding-left:5px">
+                <b>Employee Id:</b>
+            </td>
+            <td colspan="5" style="font-family:Monotype Corsiva;font-size:x-large">
+                <b>@Model.EmployeeId</b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" style="font-family:Britannic;font-size:x-large;padding-left:5px">
+                <b>Name:</b>
+            </td>
+            <td colspan="5" style="font-family:Monotype Corsiva;font-size:x-large">
+               <b> @Model.Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" style="font-family:Britannic;font-size:x-large;padding-left:5px">
+                <b>Gender:</b>
+            </td>
+            <td  style="font-family:Monotype Corsiva;font-size:x-large">
+                <b>@Model.Gender</b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" style="font-family:Britannic;font-size:x-large;padding-left:5px">
+                <b>City:</b>
+            </td>
+            <td colspan="5" style="font-family:Monotype Corsiva;font-size:x-large">
+                <b>@Model.City</b>
+            </td>
+        </tr>
+        </table>
+    <div style="padding-top:15px;font-family:Calibri;font-size:large">
+        @Html.ActionLink("Back to List", "Index", new {departmentid=@Model.DepartmentId })
+        </div>
+</div>
+</body>

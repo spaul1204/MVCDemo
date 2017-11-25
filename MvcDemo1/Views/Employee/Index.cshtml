@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MvcDemo1.Models.Employee>
+
+@using MvcDemo1.Models;
+
+@{
+    ViewBag.Title = "Employee List";
+}
+<style>
+    body 
+    {
+        height:700px;
+        width:1500px;
+        background-image:url("Images/software-engineer-working.jpg");
+        background-position:inherit;
+    }
+
+</style>
+<div style="font-family:Algerian">
+<h1>Employee List</h1>
+    </div> 
+<div style ="font-family:Forte;font-size:x-large;font-style:normal;color:black"> 
+    <ul>
+        @foreach(Employee emp in Model)
+        {
+            <li>
+                @Html.ActionLink(emp.Name,"Details",new {id = emp.EmployeeId},null)
+            </li>
+        }
+    </ul>
+
+    <div style="padding-top:15px;font-family:Calibri;font-size:large">
+    @Html.ActionLink("Back to List", "Index", "Department")
+    </div>
+
+</div>
